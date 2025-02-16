@@ -1,0 +1,33 @@
+.deliveryLogo {
+    width: 180px;
+    height: 40px;
+    margin: -30px auto 0;
+    display: block;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.container {
+    padding: 0 7%;
+    height: 120%;
+}
+
+.containerHeight {
+    padding-bottom: 70px;
+}
+
+.listSelect {
+    appearance: none;
+    background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="blue"><path d="M8 5v14l11-7z"/></svg>') no-repeat right center;
+    background-size: 1.5em;
+    padding-right: 3em;
+    /* Increased padding-right */
+    border: 1px solid #232323de;
+    border-radius: 4px;
+    height: 45px;
+    padding: 0px 10px;
+}

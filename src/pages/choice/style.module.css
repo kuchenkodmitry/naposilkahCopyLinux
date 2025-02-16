@@ -1,0 +1,24 @@
+.choiceContainer {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.button {
+    width: 80%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    box-sizing: border-box;
+    justify-content: center;
+    gap: 40px;
+    color: black;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: -5.92px 12.69px 29px 0px rgba(78, 78, 78, 0.16);
+    background: rgb(255, 255, 255);
+}
