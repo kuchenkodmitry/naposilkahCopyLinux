@@ -1,0 +1,40 @@
+/* AccordionItem.module.css */
+.accordionItem {
+    margin-bottom: 10px;
+}
+
+.accordionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.open {
+    background-color: #e0e0e0;
+}
+
+.icon {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.accordionContent {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.accordionContent.open {
+    max-height: 800px;
+    /* Установите максимальную высоту, достаточную для вашего контента */
+    padding: 10px;
+}

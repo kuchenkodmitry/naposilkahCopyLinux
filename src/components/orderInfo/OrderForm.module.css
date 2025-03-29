@@ -1,48 +1,174 @@
-.container {
-    width: 80%;
+.containerHeight {
+    width: 94%;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: -40px;
     padding-bottom: 70px;
-}
-
-.title {
-    font-size: 24px;
-    color: #007bff;
-    margin-bottom: 10px;
-}
-
-.boxberryLogo {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 20px;
+    /* padding: 0 10px; */
 }
 
 .form {
     display: flex;
     flex-direction: column;
+    /* align-items: center; */
+    gap: 5px;
+}
+
+.deliveryLogo {
+    width: 180px;
+    height: 40px;
+    margin: 20px auto 10px;
+    display: block;
+}
+
+/* Базовые стили для agreement */
+.agreement {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    margin-top: 15px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Стили для label */
+.checkboxText {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Стили для чекбокса */
+.checkboxText input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    margin-right: 8px;
+    background-color: #fff;
+    outline: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Активное состояние чекбокса */
+.checkboxText input[type="checkbox"]:checked {
+    border-color: #007bff;
+    background-color: #007bff;
+}
+
+/* Галочка внутри чекбокса */
+.checkboxText input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 14px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* Стили для текста */
+.checkboxText p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Стили для ошибки */
+.error {
+    display: block;
+    font-size: 10px;
+    color: #535353;
+    /* margin-top: 10px; */
+    /* padding: px 0 0 0; */
+}
+
+.errorEmail {
+    display: block;
+    font-size: 10px;
+    color: #e41717;
 }
 
 input {
-    width: 100%;
-    padding: 8px;
-    margin: 5px 0;
+    width: 92%;
+    padding: 10px;
+    font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    transition: border-color 0.3s;
 }
 
-label {
+input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.error {
+    font-size: 14px;
+}
+
+.hint {
+    font-size: 14px;
+    color: #666;
+}
+
+.checkboxLabel {
     display: flex;
     align-items: center;
-    margin: 10px 0;
+    gap: 10px;
+    font-size: 16px;
 }
 
-button {
+.submitButton {
     background: #007bff;
     color: white;
-    padding: 10px;
+    padding: 12px;
+    font-size: 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
+    transition: background 0.3s;
 }
 
-button:hover {
+.submitButton:hover {
     background: #0056b3;
+}
+
+.preliminaryPrice {
+    color: #04347e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.price {
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    font-size: 20px;
+    
+}
+
+.sectionTitle {
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+.labelStl {
+    font-size: 14px;
+    color: #34466d;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.star {
+    font-size: 20px;
+    color: #007bff;
 }

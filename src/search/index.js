@@ -1,38 +1,41 @@
+// Search.js
 import React, { useState, useEffect, forwardRef, useImperativeHandle } from "react";
+import { useLocation } from "react-router-dom";
 import Autosuggest from "react-autosuggest";
 import "./SearchBox.css";
+import Cookies from 'js-cookie'; // Импортируем библиотеку для работы с куками
+import { fetchSuggestions as fetchSuggestionsApi } from '../api/api'; // Импортируем функцию из api.js
 
-const Search = forwardRef((_, ref) => {
+const Search = forwardRef(({ onChange }, ref) => {
   const [value, setValue] = useState("");
   const [suggestions, setSuggestions] = useState([]);
+  const location = useLocation(); // Получаем текущий URL
 
+  // Императивный метод для получения и установки значения извне
   useImperativeHandle(ref, () => ({
     getValue: () => value,
+    setValue: (newValue) => setValue(newValue), // Добавляем метод setValue
   }));
 
+  // Загрузка предложений при изменении значения
   useEffect(() => {
     if (value.trim() !== "") {
-      fetchSuggestions(value);
+      loadSuggestions(value);
     } else {
       setSuggestions([]);
     }
   }, [value]);
 
-  const fetchSuggestions = async (search) => {
+  const token = Cookies.get('auth_token'); // Предполагается, что токен хранится в куке с именем "authToken"
+  if (!token) {
+    throw new Error('Токен не найден');
+  }
+
+  // Функция для загрузки предложений через API
+  const loadSuggestions = async (search) => {
+    const apiEndpoint = location.pathname.includes("/cdek") ? "cdek" : "boxberry"; // Определяем API
     try {
-      const response = await fetch(`https://naposilkah.ru/api/ofice/boxberry/?search=${value}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": "Token d677468fbdc4820c3e4d5c12c0b586e534d22844"
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error("Ошибка сети");
-      }
-
-      const data = await response.json();
+      const data = await fetchSuggestionsApi(search, apiEndpoint, token);
       const filteredSuggestions = data.filter(suggestion => suggestion.address !== value);
       setSuggestions(filteredSuggestions);
     } catch (error) {
@@ -41,22 +44,32 @@ const Search = forwardRef((_, ref) => {
     }
   };
 
+  // Получение значения из предложения
   const getSuggestionValue = (suggestion) => suggestion.address;
 
-  const renderSuggestion = (suggestion) => <div className="suggestion-item">{suggestion.address}</div>;
+  // Отображение предложения
+  const renderSuggestion = (suggestion) => (
+    <div className="suggestion-item">{suggestion.address}</div>
+  );
 
-  const onChange = (event, { newValue }) => {
+  // Обработка изменения значения
+  const handleChange = (event, { newValue }) => {
     setValue(newValue);
+    if (onChange) {
+      onChange(newValue); // Передаем новое значение во внешний компонент
+    }
   };
 
+  // Очистка предложений
   const onSuggestionsClearRequested = () => {
     setSuggestions([]);
   };
 
+  // Свойства для поля ввода
   const inputProps = {
     placeholder: "Введите адрес...",
     value,
-    onChange,
+    onChange: handleChange,
     className: "search-input"
   };
 

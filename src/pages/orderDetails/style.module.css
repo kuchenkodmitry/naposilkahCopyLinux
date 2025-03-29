@@ -1,0 +1,33 @@
+.dataBlock p {
+    margin: 0;
+    padding: 0;
+    color: #282828
+}
+
+.dataBlock span {
+    color: #1e315a;
+    font-weight: 500;
+}
+
+.dataBlock p,
+span {
+    font-size: 16px;
+}
+
+.dataBlock h3 {
+    font-size: 20px;
+    margin: 15px 0 10px;
+}
+
+.orderItem {
+    /* width: 100%; */
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    padding-bottom: 30px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.orderDetails {
+    margin-bottom: 20px;
+}

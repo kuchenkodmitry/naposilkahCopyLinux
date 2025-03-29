@@ -1,0 +1,94 @@
+/* Общий контейнер */
+.rulesContainer {
+    /* padding: 20px 0; */
+    max-width: 1200px;
+    margin: 0 auto;
+    margin: -50px auto 50px;
+}
+
+/* Заголовок страницы */
+.rulesContainer h2 {
+
+    margin: 20px 0 30px;
+    font-size: 2rem;
+    color: #333;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Контейнер для карточек */
+.cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+
+}
+
+/* Стиль карточки */
+.card {
+    height: fit-content;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 0px;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardDescription {
+    padding: 0 15px;
+    /* font-size: 1.1rem; */
+    color: #444;
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    background-color: #e0f7fa;
+    color: #00796b;
+    padding: 15px;
+    margin: 0;
+    border-radius: 5px 5px 0 0;
+    /* text-align: center; */
+    border-bottom: 1px solid #ddd;
+}
+
+/* Эффект при наведении на карточку */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Заголовок карточки */
+.cardTitle {
+    font-size: 1.2rem;
+    margin-bottom: 0px;
+    color: #333;
+}
+
+/* Описание карточки */
+.cardDescription {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Стиль изображения */
+.cardImage {
+    width: 100%;
+    /* Изображение не выходит за пределы карточки */
+    height: auto;
+    /* Сохраняем пропорции изображения */
+    margin: 0px 0;
+    /* Отступы сверху и снизу */
+    border-radius: 0 0 8px 8px;
+    /* Скругление углов */
+    object-fit: cover;
+    /* Корректное отображение изображения */
+
+
+}
+
+/* .cardImage:hover {} */

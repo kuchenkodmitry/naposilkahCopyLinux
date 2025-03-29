@@ -12,8 +12,13 @@ const Choice = () => {
             <div onClick={() => { navigate('/boxberry') }} className={styles.button}>
                 <img width={220} src={boxberry} alt="" />
             </div>
-            <div onClick={() => { navigate('/cdek') }} className={styles.button}>
-                <img width={110} src={cdek} alt="" />
+            <div
+                // onClick={() => { navigate('/cdek') }}
+                className={styles.button}>
+                <img style={{
+                    filter: "grayscale(100%)"
+                }} width={110} src={cdek} alt="" />
+                <p>Раздел в разработке</p>
             </div>
         </div>
     );

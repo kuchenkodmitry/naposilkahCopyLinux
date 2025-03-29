@@ -1,0 +1,116 @@
+/* Общий контейнер */
+.orderContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Заголовок */
+.orderTitle {
+    /* text-align: center; */
+    font-size: 24px;
+    font-weight: 800;
+    /* margin-bottom: 20px; */
+    /* padding-bottom: 20px; */
+    color: #333;
+}
+
+/* Информация о заказе */
+.orderInfo {
+    margin-bottom: 15px;
+    /* text-align: center; */
+}
+
+.orderInfo p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+/* QR-код */
+.qrCode {
+    margin: 20px 0;
+    border: 2px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* Сообщение об ошибке */
+.errorMessage {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Ссылка на главную страницу */
+.homeLink {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.homeLink:hover {
+    background-color: #0056b3;
+}
+
+/* Сообщение "Загрузка..." */
+.loadingMessage {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.dataBlock p {
+    margin: 0;
+    padding: 0;
+    color: #282828
+}
+
+.dataBlock span {
+    color: #1e315a;
+    font-weight: 500;
+}
+
+.dataBlock p,
+span {
+    font-size: 16px;
+}
+
+.dataBlock h3 {
+    font-size: 20px;
+    margin: 15px 0 10px;
+}
+
+.orderItem {
+    /* width: 100%; */
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    padding-bottom: 30px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.fontWeight{
+    font-size: 16px;
+    margin-bottom: 3px;
+    font-weight: 700;
+}

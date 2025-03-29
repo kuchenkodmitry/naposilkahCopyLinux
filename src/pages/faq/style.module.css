@@ -1,0 +1,96 @@
+/* Общий контейнер */
+.rulesContainer {
+    padding: 20px 0;
+    max-width: 1200px;
+    margin: -60px auto 50px;
+}
+
+/* Заголовок страницы */
+.rulesContainer h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Контейнер для карточек */
+.cardsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Стиль карточки */
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Заголовок карточки */
+.cardTitle {
+    font-size: 1rem;
+    margin: 0;
+    padding: 15px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+/* Активный заголовок */
+.cardTitle.active {
+    background-color: #e0f7fa;
+    color: #00796b;
+}
+
+/* Контент карточки */
+.cardContent {
+    height: 0;
+    /* Начальная высота */
+    opacity: 0;
+    /* Начальная прозрачность */
+    overflow: hidden;
+    /* Скрываем содержимое за пределами высоты */
+    transition: height 0.3s ease, opacity 0.3s ease;
+    /* Плавный переход */
+    /* padding: 0 15px; */
+    /* Отступы по горизонтали */
+}
+
+/* Активный контент карточки */
+.cardContent.active {
+    height: auto;
+    /* Высота автоматически подстраивается под содержимое */
+    opacity: 1;
+    /* Полная видимость */
+    /* padding: 15px; */
+    /* Восстанавливаем отступы */
+}
+
+/* Стиль изображения */
+.cardImage {
+    max-width: 100%;
+    height: auto;
+    /* margin: 15px 0; */
+    border-radius: 0 0 8px 8px;
+    object-fit: cover;
+}
+
+/* Описание карточки */
+.cardDescription {
+    margin: 0;
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    /* width: 100%; */
+    padding: 0px 15px 10px;
+}
+
+.cardDescription p {
+    margin: 0;
+}
